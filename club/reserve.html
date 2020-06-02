@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>在线预约</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			#header {
+				color: #FFFFFF;
+				background-color: #060c7c;
+				padding: 10px;
+				background-image: url(images/header-bg.jpg);
+				background-repeat: no-repeat;
+				background-position: right;
+			}
+
+			#header h1 {
+				padding: 15px;
+			}
+
+			#header p {
+				color: #FFFFFF;
+				margin-bottom: 0;
+			}
+
+			#navigation {
+				background-image: url(images/nav-bg.jpg);
+				background-repeat: no-repeat;
+				float: left;
+				width: 220px;
+				height: 520px;
+			}
+
+			#navigation ul {
+				font-size: 18px;
+				list-style: none;
+				padding: 15px 0 0 20px;
+			}
+
+			li {
+				line-height: 36px;
+			}
+
+			a {
+				color: #000080;
+				font-weight: bold;
+			}
+
+			a:hover {
+				text-decoration: none;
+				color: #FFFFFF;
+				background-color: #000080;
+			}
+
+			.content {
+				height: 520px;
+				background-color: #e3eafd;
+			}
+
+			.content h2 {
+				font-size: 22px;
+				color: #ffaa7f;
+				padding-top: 10px;
+			}
+			.content p {
+				font-size: 14px;
+				color: #13133a;
+			}
+			.content #form1{
+				display: block;
+				width: 500px;
+				border: 1px solid #000080;
+				margin-left: 220px;
+				padding: 10px 20px 10px 20px;
+			}
+			.content #form1 p{
+				line-height: 24px;
+			}
+			.content  #form1 label{
+				width: 120px;
+				float: left;
+			}
+			.center{
+				text-align: center;
+			}
+			.footer {
+				height: 120px;
+				text-align: center;
+				line-height: 25px;
+				padding-top: 20px;
+				border-top: 3px #4891d9 solid;
+				background-color: #c8d4fd;
+			}
+
+			.footer p {
+				font-size: 13px;
+				color: #000080;
+				padding-left: 30%;
+				padding-right: 30%;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="header">
+			<h1>泡泡潜水俱乐部</h1>
+			<p>泡泡潜水俱乐部为您量身打造一流的潜水服务。让您开心而来，满意而归……</p>
+		</div>
+		<div id="navigation">
+			<ul>
+				<li><a href="index.html">首页</a></li>
+				<li><a href="about.html">俱乐部简介</a></li>
+				<li><a href="events.html">近期活动</a></li>
+				<li><a href="gallery.html">精彩图片</a></li>
+				<li><a href="reserve.html">在线预约</a></li>
+			</ul>
+		</div>
+		<div class="content">
+			<h2>在线预约</h2>
+			<br />
+			<p>为了让我们为您提供某项服务，您可以填写下面的表单。</p>
+			<br />
+			<form action="" method="post" enctype="multipart/form-data" name="form1" id="form1">
+				<p>
+					<label for="type">预约类型：</label>
+					<select name="type" id="type">
+						<option value="1">潜水培训</option>
+						<option value="2">潜水体验</option>
+						<option value="3">潜水旅游</option>
+					</select>
+				</p>
+
+				<p>
+					<label for="contactname">联系人：</label>
+					<input type="text" name="contactname" id="contactname" />
+				</p>
+
+				<p>
+					<label for="email">E-mail：</label>
+					<input type="text" name="email" id="email" />
+				</p>
+
+				<p>
+					<label for="address">通讯地址：</label>
+					<input type="text" name="address" id="address" />
+				</p>
+
+				<p>
+					<label for="telephone">电话：</label>
+					<input type="text" name="telephone" id="telephone" />
+				</p>
+
+				<p>
+					<label for="photo">照片：</label>
+					<input type="file" name="photo" id="photo" />
+				</p>
+				<p>
+					<label for="details">预约备注：</label>
+					<textarea name="details" id="details" cols="30" rows="7"></textarea>
+				</p>
+
+				<p>如果我们有必要与您电话联系，最好是在：
+					<input type="radio" name="timetocall" id="morning" value="morning" />
+					<span for="morning">早上</span>
+					<input type="radio" name="timetocall" id="afternoon" value="afternoon" />
+					<span for="afternoon">下午</span>
+					<input type="radio" name="timetocall" id="evening" value="evening" />
+					<span for="evening">傍晚</span>
+				</p>
+
+				<p>
+					<input type="checkbox" name="publicize" id="publicize" checked="checked" />
+					<span for="checkbox">可以将以上信息在俱乐部公开</span>
+				</p>
+
+				<p class="center">
+					<input type="submit" name="submit" id="submit" value="提交" />
+					&nbsp;&nbsp;
+					<input type="reset" name="reset" id="reset" value="重置" />
+				</p>
+			</form>
+		</div>
+		<div class="footer">
+			<p>Copyright&copy;2008 BubbleUnder.com. All Rights Reserved. 版权所有 泡泡潜水俱乐部</p>
+			<p>地址：海南省三亚市碧海蓝大酒店海日阁8A22号</p>
+			<p>邮箱：<a href="mailto:vip@BubbleUnder.com">vip@BubbleUnder.com</a></p>
+			<p>咨询电话：0898-88233755&nbsp;&nbsp;88233752&nbsp;&nbsp;13976113755</p>
+		</div>
+
+
+	</body>
+</html>
