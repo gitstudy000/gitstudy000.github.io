@@ -41,6 +41,7 @@
 	.navbar ul li {
 		margin: 0 1rem;
 		padding: 1rem;
+		font-size:2rem;
 	}
 
 	.navbar ul li a {
@@ -50,7 +51,7 @@
 
 	.navbar ul li a:hover {
 		color: skyblue;
-		font-size:6rem;
+		
 	}
 
 	section {
@@ -67,11 +68,11 @@
 	}
 
 	section h1 {
-		font-size: 12rem;
+		font-size: 6rem;
 	}
 
 	section p {
-		font-size: 5rem;
+		font-size: 3rem;
 	}
 
 	section#home {
