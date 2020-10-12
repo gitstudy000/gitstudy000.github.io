@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Python岗位城市级别分析情况</title>
+		<script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+	</head>
+	<body>
+		<div style="margin-left: 20%; width: 60%;">
+			<a href="index.html">返回上一页</a>
+			<div id="main" style="width: 800px;height:500px; margin-top: 30px;"></div>
+		</div>	
+		<script>
+			var myChart = echarts.init(document.getElementById('main'));
+			option = {
+				backgroundColor: '#080b30',
+				title: {
+					text: 'Python岗位城市级别分析情况',
+					textStyle: {
+						align: 'center',
+						color: '#fff',
+						fontSize: 20,
+					},
+					top: '5%',
+					left: 'center',
+				},
+				tooltip: {
+					trigger: 'axis',
+					axisPointer: {
+						lineStyle: {
+							color: {
+								type: 'linear',
+								x: 0,
+								y: 0,
+								x2: 0,
+								y2: 1,
+								colorStops: [{
+									offset: 0,
+									color: 'rgba(0, 255, 233,0)'
+								}, {
+									offset: 0.5,
+									color: 'rgba(255, 255, 255,1)',
+								}, {
+									offset: 1,
+									color: 'rgba(0, 255, 233,0)'
+								}],
+								global: false
+							}
+						},
+					},
+				},
+				grid: {
+					top: '10%',
+					left: '5%',
+					right: '8%',
+					bottom: '10%',
+					// containLabel: true
+				},
+				xAxis: [{
+					name:'城市级别',
+					type: 'category',
+					axisLine: {
+						show: true,
+						lineStyle: {
+							color: 'rgba(255,255,255, 0.4)',
+							width: 1 //这里是为了突出显示加上的
+						}
+					},
+					splitArea: {
+						// show: true,
+						color: '#f00',
+						lineStyle: {
+							color: '#f00'
+						},
+					},
+					axisLabel: {
+						color: '#fff'
+					},
+					splitLine: {
+						show: false
+					},
+					boundaryGap: false,
+					data: ['一线城市', '二线城市', '三线城市', '四线城市', '五线城市'],
+
+				}],
+
+				yAxis: [{
+					name:'招聘岗位数量',
+					type: 'value',
+					min: 0,
+					// max: 140,
+					splitNumber: 4,
+					splitLine: {
+						show: true,
+						lineStyle: {
+							color: 'rgba(255,255,255,0.1)'
+						}
+					},
+					axisLine: {
+						show: true,
+						lineStyle: {
+							color: 'rgba(255,255,255, 0.4)',
+							width: 1 //这里是为了突出显示加上的
+						}
+					},
+					axisLabel: {
+						show: false,
+						margin: 20,
+						textStyle: {
+							color: '#d1e6eb',
+
+						},
+					},
+					axisTick: {
+						show: false,
+					},
+				}],
+				
+				legend: {
+					data: ['Python岗位城市级别'],
+					right: 10,
+					top: 12,
+					textStyle: {
+						color: "#fff"
+					},
+					itemWidth: 22,
+					itemHeight: 20,
+					// itemGap: 35
+				},
+				
+				series: [{
+						name: 'Python岗位城市级别',
+						type: 'line',
+						smooth: true, //是否平滑
+						showAllSymbol: true,
+						// symbol: 'image://./static/images/guang-circle.png',
+						symbol: 'circle',
+						symbolSize: 15,
+						lineStyle: {
+							normal: {
+								color: "#32CD32",
+								shadowColor: 'rgba(0, 0, 0, .3)',
+								shadowBlur: 0,
+								shadowOffsetY: 5,
+								shadowOffsetX: 5,
+							},
+						},
+						label: {
+							show: true,
+							position: 'top',
+							textStyle: {
+								color: '#32CD32',
+							}
+						},
+						itemStyle: {
+							color: "#32CD32",
+							borderColor: "#fff",
+							borderWidth: 3,
+							shadowColor: 'rgba(0, 0, 0, .3)',
+							shadowBlur: 0,
+							shadowOffsetY: 2,
+							shadowOffsetX: 2,
+						},
+						tooltip: {
+							show: false
+						},
+						areaStyle: {
+							normal: {
+								color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+										offset: 0,
+										color: 'rgba(50,205,50,0.3)'
+									},
+									{
+										offset: 1,
+										color: 'rgba(50,205,50,0)'
+									}
+								], false),
+								shadowColor: 'rgba(50,205,50, 0.9)',
+								shadowBlur: 20
+							}
+						},
+						data: [3902, 616, 25, 13, , ]
+					},
+					
+				]
+			};
+
+
+			// 使用刚指定的配置项和数据显示图表。
+			myChart.setOption(option);
+		</script>
+	</body>
+</html>

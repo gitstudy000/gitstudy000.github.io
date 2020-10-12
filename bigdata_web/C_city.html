@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>招聘C语言岗位主要城市分析情况</title>
+		<script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+	</head>
+	<body>
+		<div style="margin-left: 20%; width: 60%;">
+			<a href="index.html">返回上一页</a>
+			<div id="main" class="col" style="width: 800px;height:500px; margin-top:50px;"></div>
+		</div>
+		<script>
+			var myChart = echarts.init(document.getElementById('main'));
+
+			var option = {
+				backgroundColor: "#38445E",
+				title: {
+					text: '招聘C语言岗位主要城市分析情况',
+					textStyle: {
+						align: 'center',
+						color: '#fff',
+						fontSize: 18,
+					},
+					top:'2%',
+					left:'center',
+				},
+				grid: {
+					left: '8%',
+					top: '12%',
+					bottom: '8%',
+					right: '12%'
+				},
+				legend: {
+					data: ['C语言'],
+					right: 10,
+					top: 12,
+					textStyle: {
+						color: "#fff"
+					},
+					itemWidth: 32,
+					itemHeight: 30,
+					// itemGap: 35
+				},
+				xAxis: {
+					name:'城市名称',
+					data: ['东莞','中山','云浮','佛山','广州','惠州','汕头','江门','河源','深圳','清远','珠海','肇庆','茂名'],
+					axisTick: {
+						show: false
+					},
+					axisLine: {
+						lineStyle: {
+							color: 'rgba(255,255,255, 0.4)',
+							width: 1 //这里是为了突出显示加上的
+						}
+					},
+					axisLabel: {
+						textStyle: {
+							color: '#999',
+							fontSize: 12
+						}
+					}
+				},
+				yAxis: [{
+					name:'招聘岗位数量',
+					splitNumber: 2,
+					axisTick: {
+						show: false
+					},
+					axisLine: {
+						lineStyle: {
+							color: 'rgba(255,255,255, 0.4)',
+							width: 1 //这里是为了突出显示加上的
+						}
+					},
+					axisLabel: {
+						textStyle: {
+							color: '#999'
+						}
+					},
+					splitArea: {
+						areaStyle: {
+							color: 'rgba(255,255,255,.5)'
+						}
+					},
+					splitLine: {
+						show: true,
+						lineStyle: {
+							color: 'rgba(0,206,209147,112,219, 0.1)',
+							width: 0.5,
+							type: 'dashed'
+						}
+					}
+				}],
+				series: [{
+					name: 'C语言',
+					type: 'pictorialBar',
+					barCategoryGap: '0%',
+					symbol: 'path://M0,10 L10,10 C5.5,10 5.5,5 5,0 C4.5,5 4.5,10 0,10 z',
+					label: {
+						show: true,
+						position: 'top',
+						distance: 15,
+						color: '#FFD700',
+						fontWeight: 'bolder',
+						fontSize: 15,
+					},
+					itemStyle: {
+						normal: {
+							color: {
+								type: 'linear',
+								x: 0,
+								y: 0,
+								x2: 0,
+								y2: 1,
+								colorStops: [{
+										offset: 0,
+										color: 'rgba(255,215,0, 0.8)' //  0%  处的颜色
+									},
+									{
+										offset: 1,
+										color: 'rgba(255,215,0, 0.1)' //  100%  处的颜色
+									}
+								],
+								global: false //  缺省为  false
+							}
+						},
+						emphasis: {
+							opacity: 1
+						}
+					},
+					data: [70, 43, 2, 55, 92, 39, 1, 11,4,3,3,86,21,1],
+					z: 10
+				}]
+			};
+
+
+			// 使用刚指定的配置项和数据显示图表。
+			myChart.setOption(option);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+	</head>
+	<body>
+		<div style="margin-left: 20%; width: 60%;">
+			<a href="index.html">返回上一页</a>
+			<div id="main" style="width: 800px;height:600px; margin-top: 30px;"></div>
+		</div>	
+		<script>
+			var myChart = echarts.init(document.getElementById('main'));
+
+			var option = {
+				backgroundColor: '#232d36',
+				title: {
+					text: '招聘岗位公司规模分析情况',
+					textStyle: {
+						align: 'center',
+						color: '#fff',
+						fontSize: 18,
+					},
+					top: '2%',
+					left: 'center',
+				},
+				tooltip: {
+					trigger: 'axis',
+					axisPointer: {
+						lineStyle: {
+							color: {
+								type: 'linear',
+								x: 0,
+								y: 0,
+								x2: 0,
+								y2: 1,
+								colorStops: [{
+									offset: 0,
+									color: 'rgba(0, 255, 233,0)'
+								}, {
+									offset: 0.5,
+									color: 'rgba(255, 255, 255,1)',
+								}, {
+									offset: 1,
+									color: 'rgba(0, 255, 233,0)'
+								}],
+								global: false
+							}
+						},
+					},
+				},
+				grid: {
+					top: '15%',
+					left: '10%',
+					right: '10%',
+					bottom: '15%',
+					// containLabel: true
+				},
+				xAxis: [{
+					name:'公司规模',
+					type: 'category',
+					axisLine: {
+						show: false,
+						color: '#A582EA'
+					},
+
+					axisLabel: {
+						color: '#A582EA',
+						width: 100
+					},
+					splitLine: {
+						show: false
+					},
+					boundaryGap: false,
+					data: ["少于50人", "50-150人", "150-500人", "500-1000人", "1000-5000人", "5000-10000人", "10000人以上"] //this.$moment(data.times).format("HH-mm") ,
+
+				}],
+
+				yAxis: [{
+					name:'招聘岗位数量',
+					type: 'value',
+					min: 0,
+					// max: 140,
+					splitNumber: 4,
+					splitLine: {
+						show: true,
+						lineStyle: {
+							color: '#00BFF3',
+							opacity: 0.23
+						}
+					},
+					axisLine: {
+						show: false,
+					},
+					axisLabel: {
+						show: true,
+						margin: 20,
+						textStyle: {
+							color: '#fff',
+
+						},
+					},
+					axisTick: {
+						show: false,
+					},
+				}],
+				series: [{
+						name: 'C语言',
+						type: 'line',
+						showAllSymbol: true,
+						symbol: 'circle',
+						symbolSize: 10,
+						lineStyle: {
+							normal: {
+								color: "#FFD700",
+							},
+						},
+						label: {
+							show: true,
+							position: 'top',
+							textStyle: {
+								color: '#FFD700',
+							}
+						},
+						itemStyle: {
+							color: "#fff",
+							borderColor: "#FFD700",
+							borderWidth: 2,
+						},
+						areaStyle: {
+							normal: {
+								color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+										offset: 0,
+										color: 'rgba(43,193,145,0.3)'
+									},
+									{
+										offset: 1,
+										color: 'rgba(43,193,145,0)'
+									}
+								], false),
+							}
+						},
+						data: [151, 374, 332, 124, 191, 39, 85] //data.values
+					},
+					{
+						name: 'Java',
+						type: 'line',
+						showAllSymbol: true,
+						symbol: 'circle',
+						symbolSize: 10,
+						lineStyle: {
+							normal: {
+								color: "#FF4500",
+							},
+						},
+						label: {
+							show: true,
+							position: 'top',
+							textStyle: {
+								color: '#FF4500',
+							}
+						},
+						itemStyle: {
+							color: "#fff",
+							borderColor: "#FF4500",
+							borderWidth: 2,
+						},
+						areaStyle: {
+							normal: {
+								color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+										offset: 0,
+										color: 'rgba(81,150,164,0.3)'
+									},
+									{
+										offset: 1,
+										color: 'rgba(81,150,164,0)'
+									}
+								], false),
+							}
+						},
+						data: [601, 1162, 1176, 461, 781, 113, 180] //data.values
+					},
+					{
+						name: 'Python',
+						type: 'line',
+						showAllSymbol: true,
+						symbol: 'circle',
+						symbolSize: 10,
+						lineStyle: {
+							normal: {
+								color: "#32CD32",
+							},
+						},
+						label: {
+							show: true,
+							position: 'top',
+							textStyle: {
+								color: '#32CD32',
+							}
+						},
+						itemStyle: {
+							color: "#fff",
+							borderColor: "#32CD32",
+							borderWidth: 2,
+						},
+						areaStyle: {
+							normal: {
+								color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+										offset: 0,
+										color: 'rgba(81,150,164,0.3)'
+									},
+									{
+										offset: 1,
+										color: 'rgba(81,150,164,0)'
+									}
+								], false),
+							}
+						},
+						data: [362, 891, 963, 481, 737, 110, 287] //data.values
+					},
+				]
+			};
+
+			// 使用刚指定的配置项和数据显示图表。
+			myChart.setOption(option);
+		</script>
+	</body>
+</html>

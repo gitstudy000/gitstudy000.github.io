@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+	</head>
+	<body>
+		<div style="margin-left: 20%; width: 60%;">
+			<a href="index.html">返回上一页</a>
+			<div id="main" style="width: 800px;height:600px;"></div>
+		</div>
+		<script>
+			 var myChart = echarts.init(document.getElementById('main'));
+			 var fontColor = '#30eee9';
+			 option = {
+			     backgroundColor: '#11183c',
+				 title: {
+				 	text: '招聘岗位经验要求分析情况',
+				 	textStyle: {
+				 		align: 'center',
+				 		color: '#fff',
+				 		fontSize: 20,
+				 	},
+				 	top: '1%',
+				 	left: 'center',
+				 },
+			     grid: {
+			         left: '5%',
+			         right: '10%',
+			         top: '20%',
+			         bottom: '8%',
+			         containLabel: true
+			     },
+			     tooltip: {
+			         show: true,
+			         trigger: 'item'
+			     },
+			     		legend: {
+			     			show:true,
+			     			x:'center',
+			     			y:'55',
+			     			icon: 'stack',
+			     			itemWidth:10,
+			     			itemHeight:10,
+			     			textStyle:{
+			     				color:'#1bb4f6'
+			     			},
+			     			data:['C语言','Java','Python']
+			     		},
+			     xAxis: [{
+					 name:'经验要求',
+			         type: 'category',
+			         boundaryGap: false,
+			         axisLabel: {
+			             color: fontColor
+			         },
+			         axisLine: {
+			             show: true,
+			             lineStyle: {
+			                 color: '#397cbc'
+			             }
+			         },
+			         axisTick: {
+			             show: false,
+			         },
+			         splitLine: {
+			             show: false,
+			             lineStyle: {
+			                 color: '#195384'
+			             }
+			         },
+			         data: ['在校生/应届生', '无需经验', '1年经验', '2年经验', '3-4年经验', '5-7年经验', '8-9年经验', '10年以上经验']
+			     }],
+			     yAxis: [{
+						 name:'招聘岗位数量',
+			             type: 'value',
+			             min: 0,
+			             max: 2000,
+			             axisLabel: {
+			                 formatter: '{value}',
+			                 textStyle: {
+			                     color: '#2ad1d2'
+			                 }
+			             },
+			             axisLine: {
+			                 lineStyle: {
+			                     color: '#27b4c2'
+			                 }
+			             },
+			             axisTick: {
+			                 show: false,
+			             },
+			             splitLine: {
+			                 show: true,
+			                 lineStyle: {
+			                     color: '#11366e'
+			                 }
+			             }
+			         },
+			 
+			     ],
+			     series: [{
+			             name: 'C语言',
+			             type: 'line',
+			             stack: 'C语言',
+			             symbol: 'circle',
+			             symbolSize: 8,
+			             itemStyle: {
+			                 normal: {
+			                     color: '#FFD700',
+			                     lineStyle: {
+			                         color: "#FFD700",
+			                         width: 1
+			                     },
+			                 }
+			             },
+			             markPoint: {
+			                 itemStyle: {
+			                     normal: {
+			                         color: 'yellow'
+			                     }
+			                 }
+			             },
+			             data: [106,43,216,284,434,161,8,15]
+			         },
+			         {
+			             name: 'Java',
+			             type: 'line',
+			             stack: 'Java',
+			             symbol: 'circle',
+			             symbolSize: 8,
+			             itemStyle: {
+			                 normal: {
+			                     color: '#FF4500',
+			                     lineStyle: {
+			                         color: "#FF4500",
+			                         width: 1
+			                     },
+			                 }
+			             },
+						 markPoint: {
+						     itemStyle: {
+						         normal: {
+						             color: 'red'
+						         }
+						     }
+						 },
+			             data: [251,89,580,929,1642,808,75,21]
+			         },
+					{
+					    name: 'Python',
+					    type: 'line',
+					    stack: 'Python',
+					    symbol: 'circle',
+					    symbolSize: 8,
+								 
+					    itemStyle: {
+					        normal: {
+					            color: '#32CD32',
+					            lineStyle: {
+					                color: "#32CD32",
+					                width: 1
+					            },
+					        }
+					    },
+						markPoint: {
+						    itemStyle: {
+						        normal: {
+						            color: 'green'
+						        }
+						    }
+						},
+					    data: [297,188,711,774,1210,452,42,17]
+					},
+			     ]
+			 };
+			 
+			// 使用刚指定的配置项和数据显示图表。
+			myChart.setOption(option);
+		</script>
+	</body>
+</html>
